@@ -26,7 +26,7 @@ namespace Aufgabe_Versandsservice_Polymorphy.Klassen
         }
         public void NeuesPacket(Adressen sender, Adressen empfänger, double gewicht)
         {
-            Postsendung packet = new Packet(IdCreator(), sender, empfänger,gewicht);
+            Postsendung packet = new VerfolgbaresPacket(IdCreator(), sender, empfänger,gewicht);
             _versand.Add(packet);
         }
 
@@ -45,7 +45,7 @@ namespace Aufgabe_Versandsservice_Polymorphy.Klassen
         {
             foreach (Postsendung a in _versand)
             {
-                a.Ausgabe();
+                Console.WriteLine(a.ToString()); 
             }
         }
 

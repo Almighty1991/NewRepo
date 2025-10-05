@@ -21,14 +21,14 @@ namespace Aufgabe_Versandsservice_Polymorphy.Klassen
 
         
 
-        public override void Ausgabe()
+        public override string ToString()
         {
-            Console.WriteLine($"Medium: {GetType().Name}\n" +
+            return $"Medium: {GetType().Name}\n" +
                 $"Art: {_briefkategorie}\n" +
                 $"ID: {_id}\n" +
                 $"Absender:\n{_absender.AusgabeBrief()}\n" +
                 $"Empfänger:\n{_empfänger.AusgabeBrief()}\n" +
-                $"Zugestellt: {GetZugestellt()}");
+                $"Zugestellt: {GetZugestellt()}";
         }
     }
 }

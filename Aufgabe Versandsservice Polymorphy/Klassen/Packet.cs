@@ -14,7 +14,6 @@ namespace Aufgabe_Versandsservice_Polymorphy.Klassen
         {
             _gewicht = gewicht;
             _versichert = versichert;
-            
         }
 
         public double GetGewicht() { return _gewicht; }
@@ -22,14 +21,15 @@ namespace Aufgabe_Versandsservice_Polymorphy.Klassen
         public bool GetVersicherung() {  return _versichert; }
         public void SetVersichert() {  _versichert = true; }
 
-        public override void Ausgabe()
+        public override string ToString()
         {
-            Console.WriteLine($"Medium: {GetType().Name}\n" +
+           return $"Medium: {GetType().Name}\n" +
                 $"Gewicht: {_gewicht} Kg\n" +
                 $"Versichert: {_versichert}\n" +
                 $"ID: {_id}\n" +
                 $"Absender:\n{_absender.AusgabeBrief()}\n" +
-                $"Empfänger:\n{_empfänger.AusgabeBrief()}");
+                $"Empfänger:\n{_empfänger.AusgabeBrief()}\n" +
+                $"Zugestellt: {GetZugestellt()}";
         }
     }
 }

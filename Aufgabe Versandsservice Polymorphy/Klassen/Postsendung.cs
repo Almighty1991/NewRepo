@@ -21,7 +21,7 @@ namespace Aufgabe_Versandsservice_Polymorphy.Klassen
 
         }
 
-        public abstract void Ausgabe();
+       
 
 
         public void SetZugestellt()
@@ -33,6 +33,15 @@ namespace Aufgabe_Versandsservice_Polymorphy.Klassen
 
         public Adressen GetSender() { return _absender;}
         public Adressen GetEmpfänger() { return _empfänger; }
+
+        public override string ToString()
+        {
+            return $"Medium: {GetType().Name}\n" +
+                $"ID: {_id}\n" +
+                $"Absender:\n{_absender.AusgabeBrief()}\n" +
+                $"Empfänger:\n{_empfänger.AusgabeBrief()}\n" +
+                $"Zugestellt: {GetZugestellt()}";
+        }
 
 
     }

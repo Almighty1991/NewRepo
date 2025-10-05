@@ -19,8 +19,9 @@ namespace Aufgabe_Versandsservice_Polymorphy
             Adressen empfänger1 = new Adressen("Müller", "Olaf", "Frankenweg 6",
             "44879 Bochum");
 
-            service.NeuerBrief(sender1,empfänger1);
+            service.NeuesPacket(sender1,empfänger1,10);
             service.Ausliefern();
+
             service.AusgabeListe();
 
 
